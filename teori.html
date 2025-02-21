@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <link id="cssLankInutiIframeSidan" rel="stylesheet" type="text/css" href="ljustema.css">
+        <script src="modul7.js"></script>
+        <style>
+</style>
+    </head>
+<body onload="temaKoll()" overflow="auto">
+
+    Teoretiska frågor:<br>
+    <b>a. Vad är JavaScript och varför används det? </b><br>
+
+    Javascript är ett programmeringsspråk som används vid skapandet av hemsidor för att kunna styra hemsidans beteende och funktioner. Trots att det finns en del likheter i hur man skriver koden, ska Javascript inte förväxlas med Java, som är ett annat programmeringsspråk.
+    Javscript är "<i>the programming language of the Web</i>".<br><br>
+
+    <b>b. Hur definieras en variabel i JavaScript? </b><br>
+Man använder "let" eller "const" för att definiera en variabel. Om jag t.ex vill skapa en variabel som sparar värdet av ett specifikt elements innehåll skriver jag:
+<div class="kodbox">let namnPåVariabel = document.getElementById("elementetsId").innerHTML;</div>
+Eller om jag vill skapa en variabel som innehåller värdet "Joel", skriver jag helt enkelt:
+<div class="kodbox">let namnPåVariabel = "Joel"</div>
+När man skapar variabler som använder sig av strängar (text), behöver man använda sig av citationstecken, men om man istället ska definiera en variabel som innehåller ett numeriskt värde (en så kallad literal) kan man bara skriva:
+<div class="kodbox">let namnPåVariabel = 100</div>
+Man kan även definiera variablar med "var", men det är ett äldre sätt att göra det på, och nu för tiden så använder man mestadels de andra metoderna.
+En anledning till detta är att "let" och "const" är limiterade till att existera inom det block de skapas. Om man försöker använda en sådan variabel utanför dess block, så fungerar den inte.
+Detta gör att det är mindre kod som "läcker", och skapar oväntade problem. 
+    <br><br>
+    <b>c. Vad är en funktion i JavaScript? </b><br>
+    En funktion är ett kodblock som utför någon typ av handling, eller flera handlingar, som sedan kan kallas på ifrån HTML-koden eller javascript-koden.
+    Man skapar en funktion genom att skriva:
+    <div class="kodbox">function funktionensNamn() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;här inne skrivs den kod som funktionen ska utföra<br>
+    }
+    </div>
+    <br>
+    <b>d. Skillnaden mellan "var", "let" och "const"?</b> <br>
+    "Var" är den äldre metoden att definiera variablar, men den har vissa egenskaper som oftast är oönskade. Den kan till exempel läsas utifrån det kodblock den är definierad i, vilket oftast inte är önskvärt.<br>
+    "Const" är en metod för att etablera variablar som är konstanter. Dessa variablar kan inte ändras efter de har skapats, utan behåller alltid sitt ursprungliga värde.
+    "Let" är den moderna metoden att definiera en variabel. Let kan omdefinieras efter de skapats, till skillnad från const.<br><br>
+    <b>e. Hur kan JavaScript interagera med HTML-element?</b><br>
+    Exempel på saker man kan göra med javascript i kombination med HTML-element är att ändra stil på elementet, hämta information från elementets innehåll eller stil, byta ut innehållet i elementet, ändra ett elements beteende när man interagerar med det, med mera.
+    <br><br>
+    <div style="text-align:right;">Av: Joel Seger</div>
+
+</body>
+</html>
