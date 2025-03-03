@@ -1,0 +1,725 @@
+/* det finns en hel del bootstrap grejer här som jag importerat och ändra för att jag inte var nöjd med dem.
+(typ transitions, nav-link saker, .sokknapp, etc.)
+jag har försökt strukturera upp css filen så bra jag kan, men det blev... mycket text..*/
+
+
+/*--------------------------------MISC-----------------------------------*/
+body {
+    background: linear-gradient(to top, var(--c), var(--e));
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.navigering {
+    z-index: 1;
+    margin-top: -5px;
+    background: linear-gradient(var(--a), var(--d)) !important;
+    height: 90px;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 2px 5px black;
+    width: 980px;
+}
+
+.nav-link {
+    transition: color .3s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.nav-link:hover {
+    color:white !important;
+
+}
+
+.navigering2 {
+    background: linear-gradient(var(--a), var(--d)) !important;
+    box-shadow: 0px 2px 5px black;
+}
+
+.scrollmenylankar {
+    text-decoration: none;
+    color: var(--b);
+}
+
+
+.sokknapp {
+
+        margin-left:-7px;
+        --bs-btn-color: #fff;
+        --bs-btn-border-color: var(--a);
+        --bs-btn-hover-color: #fff;
+        --bs-btn-hover-bg: var(--a);
+        --bs-btn-hover-border-color: var(--a);
+        --bs-btn-focus-shadow-rgb: 25, 135, 84;
+        --bs-btn-active-color: #fff;
+        --bs-btn-active-bg: var(--a);
+        --bs-btn-active-border-color: var(--a);
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: var(--a);
+        --bs-btn-disabled-bg: transparent;
+        --bs-btn-disabled-border-color: var(--a);
+        --bs-gradient: none
+        
+    
+}
+
+
+/*-----------------------------FÄRGSCHEMA-------------------------------*/
+
+:root {
+    --a: #27374D;
+    --b: #526D82;
+    --c: #9DB2BF;
+    --d: #DDE6ED;
+    --e: #ffffff;
+}
+
+/* STILER FÖR SJÄLVA SCROLLMENYN I NAVIGERINGSLISTEN */
+.scrollerbox {
+    display: flex;
+    transition: all 0.5s ease-in-out;
+    
+}
+.scrollerbox iframe {
+    width: 270px;
+    min-height: 37px;
+    max-height: 37px;
+    border: 2px inset var(--a);
+    z-index: 10;
+    border-radius: 20px 0px 0px 20px;
+    transition: all 0.5s ease-in-out;
+}
+.scrollerbox div {
+    flex-direction: column; 
+    max-height: 37px;
+    min-height: 37px;
+    transition: all 0.5s ease-in-out;
+}
+.scrollerbody {
+    background: linear-gradient(to bottom, var(--a), #eeeeee, var(--a));
+    background-size: 100% 37px;
+    background-attachment: fixed;   
+    transition: background-size 0.5s ease-in-out;
+}
+.dropDownButton {
+    text-shadow: 0px 3px 2px white;
+    width: 50px;
+    max-height: 37px;
+    min-height: 37px;
+    background: linear-gradient(var(--a), var(--d));
+    border: 1px outset var(--a);
+    border-radius: 0px 20px 20px 0px;
+    margin-right:5px;
+}
+
+/*--------- STILER TILL TITLAR OCH DATUM I SCROLLMENYN -------------*/
+.posttitelscroller {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: -8px;
+    font-size: 14px;
+
+}
+
+.datumheaderscroller {
+    display: block;
+    flex-direction: column;
+    max-width: 35%;
+    border-left: 1px solid black;
+    height: 30px;
+    padding: 0px 3px 0px 10px;
+    color: var(--d) !important;
+    text-shadow: 2px 2px 2px #222831;
+}
+
+.titelheaderscroller {
+    flex-direction: column;
+    max-width: 85%;
+    margin-left: 5px;
+    padding: 0px 3px 0px 3px;
+}
+
+.titelheaderscroller a {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: var(--bs-nav-link-color);
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    transition: color .3s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    
+}
+.titelheaderscroller:hover {
+    color:white !important;
+}
+
+
+
+
+/*-----------------------------------------------------------------*/
+
+
+/* STILER FÖR MAIN-SIDANS UTSEENDE PÅ BLOGGINLÄGGEN */
+.posttitel {
+
+    display: flex;
+    justify-content: stretch;
+    width: 100%;
+    gap: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    color: white;
+    
+    border: 1px solid black;
+    border-radius: 5px 5px 0px 0px;
+    background-color: var(--a);
+    box-shadow: 0px -5px 10px inset var(--b);
+
+
+
+
+}
+
+.datumheader {
+    position: relative;
+    flex-direction: column;
+    width: 80px;
+    min-width: 80px;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    padding: 5px 3px 0px 3px;
+    overflow: hidden;
+    background: linear-gradient(var(--b), var(--d));
+    color: black;
+    font-size: 14px;
+    justify-content: center !important;
+    align-items: center !important;
+
+
+}
+
+.titelheader {
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    text-align: center;
+    margin-bottom: 2px;
+    margin-right: 5px;
+    text-shadow: 2px 2px 2px black;
+    padding: 0px 5px 0px 5px;
+    overflow: hidden;
+    font-weight: bold;
+    background: linear-gradient(var(--b), var(--d));
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+}
+
+
+
+
+
+/* STILER FÖR MAIN-SIDANS "DRAGSPEL" PÅ BLOGGINLÄGGEN */
+
+.dragspel {
+    position: relative;
+    display: block;
+    width: 100%;
+    border: 1px solid black;
+    margin: auto;
+    box-shadow: 0px -50px 30px -15px inset var(--a);
+    z-index: 1;
+    word-break: break-word;
+    background: linear-gradient(var(--c), var(--d), var(--c));
+    overflow: hidden;
+    max-height: 125px;
+    min-height: 125px;
+
+    transition: box-shadow 1s ease-in-out, max-height 1s ease-in-out, min-height 1s ease-in-out;
+}
+
+.doldtitel {
+    position: relative;
+    border: 0px 1px 1px 1px inset black;
+    box-shadow: 0px 1px 5px black;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-left: 70px;
+    margin-right: 70px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0px 0px 4px rgb(0, 0, 0);
+    padding: 0px 5px 0px 5px;
+    border-radius: 0px 0px 10px 10px;
+    min-width:70%;
+    background: linear-gradient(var(--a), var(--c));
+    color: white;
+    display:none;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+
+}
+
+.oppnahelskarm {
+    position: absolute;
+    margin-top:-40px;
+    border: 1px solid black;
+    display: none;
+    font-size:14px;
+    background: linear-gradient(var(--a), var(--c));
+    box-shadow: 0px 1px 5px black;
+    border-radius: 0px 0px 10px 0px;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);    
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.oppnahelskarm:hover {
+    background: linear-gradient(var(--b), var(--c));
+    color: white;
+    text-shadow: 2px 2px 0px rgb(0, 0, 0);    
+
+}
+
+
+.stangningsdiv {
+    flex-direction: column;
+    max-width: 50%;
+    box-shadow: 0px 0px 4px black;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 30px;
+    padding: 0px 3px 0px 3px;
+    background: linear-gradient(var(--b), var(--d));
+    margin-bottom: 2px;
+    
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    
+}
+.stangningsdiv:hover {
+    background: linear-gradient(var(--a), var(--c));
+
+}
+.stangningsdiv:active {
+    border: 1px inset black;
+    background: linear-gradient(var(--a), var(--b));
+    box-shadow: 0px 0px 0px black;
+    
+}
+
+.stangningsdiv button {
+    border: none;
+    background-color: transparent;
+
+    
+}
+
+.cover {
+    display: none;
+    visibility: visible;
+    opacity: 1;
+    max-height: 125px;
+    min-height: 125px;
+    width: 40%;
+    margin: auto;
+    box-shadow: 0px -80px 35px -55px inset rgba(0, 24, 61, 0.76);
+    position: absolute;
+    z-index: 2;
+    border: 1px solid black;
+    border-bottom: 1px inset black;
+    transition: opacity 2s ease-in-out, visibility 2s ease-in-out;
+
+}
+
+.oppnare {
+    height: 25px;
+    border: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    width:50%;
+    margin:auto;
+    background-color: rgba(255, 255, 255, 0.849);
+    text-align: center;
+    box-shadow: 0px -5px 10px inset rgba(139, 139, 139, 0.849);
+    z-index: 2;
+    border-radius: 0px 0px 5px 5px;
+
+    
+
+
+}
+
+.oppnarknapp {
+    width: 100%;
+    border: none;
+    text-shadow: 0px 0px 5px var(--d);
+    z-index: 3;
+    margin: auto;
+    margin-left:-6px;
+    margin-top:-2px;
+    
+}
+
+
+/*------------------------------------------------------------------*/
+
+
+
+
+
+
+/*------------ STILER TILL SIDA DÄR INLÄGG ÄR ENSAMT --------------*/
+.posttitelsolo {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    gap: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    margin-top: 10%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 20px 20px 0px 0px;
+    background-color: rgba(177, 177, 177, 0.849);
+    box-shadow: 0px -5px 10px inset rgba(53, 53, 53, 0.849);
+    margin: auto;
+    text-shadow: 0px 2px 2px rgb(231, 231, 231);
+    color: black !important;
+}
+
+.returnknapp {
+    color:var(--a);
+}
+.returnknapp:hover {
+    color: var(--c);
+}
+
+.titelheadersolo {
+    flex-direction: column;
+    width: 80%;
+    box-shadow: 2px 2px 2px black;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 2px;
+    margin-right: 5px;
+    padding-bottom: 35px;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.textinnehall {
+    background: linear-gradient(var(--b), var(--d), var(--b));
+    box-shadow: 0px -10px 10px inset rgba(0, 0, 0, 0.658);
+    display: block;
+    min-height: 600px;
+    height: fit-content;
+    width: 80%;
+    border: 1px solid black;
+    margin: auto;
+    padding: 50px 50px 50px 50px;
+    overflow: hidden;
+    z-index: 1;
+    line-break: anywhere;
+    border-radius: 0px 0px 10px 10px;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+Button {
+    text-shadow: 0px 3px 2px white;
+    background-color: transparent;
+    border: none;
+
+    
+}
+
+
+
+/*-----------------------------------------------------------------*/
+
+
+/*-----------STILER FÖR SIDAN DÄR MAN SKAPAR NYTT INLÄGG ----------*/
+
+.nyttInlaggRam {
+    width:65%;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+    margin:auto;
+    margin-top:20px;
+    background: linear-gradient(var(--a), var(--c));
+    text-align: center;
+    
+}
+
+.textDivForTitel {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    width:80%;
+    border: 1px solid black;
+    margin: auto !important;
+    margin-top: 15px !important;
+    padding: 2% 0% 5% 0%;
+    box-shadow: 0px 0px 15px black;
+    text-shadow: 0px 0px 5px var(--c);
+}
+
+.textDivForInlagg {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    width:80%;
+    border: 1px solid black;
+    margin:auto !important;  
+    margin-top: 15px !important;
+    padding: 5% 0% 5% 0%;
+    box-shadow: 0px 0px 15px black;
+    text-shadow: 0px 0px 5px var(--c);
+}
+
+.titelInputForm {
+    
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    margin: auto !important;
+    width: 80%;
+    height:30px;
+    resize: none;
+}
+
+.textInputForm {
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    margin: auto !important;
+    width: 80%;
+    min-height: 200px;
+    
+    
+}
+
+.skapaInlaggKnapp {
+    
+    position: relative;
+    display: block;
+    margin:auto;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+    margin-bottom: 20px;
+    font-size: 20px;
+    background: var(--d);
+    
+}
+.skapaInlaggKnapp:hover {   
+    border: 1px solid var(--a);
+    box-shadow: 2px 2px 2px var(--a);
+}
+.skapaInlaggKnapp:active {
+    
+    box-shadow: 0px 0px 2px black; 
+}
+
+
+.h2 {
+    text-shadow: 2px 2px 2px black;
+    color: var(--c);
+}
+.savedInputLank {
+    text-decoration: none;
+    position: relative;
+    display: block;
+    margin:auto;
+    width:200px;
+    height:50px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-top:10px;
+    box-shadow: 2px 2px 2px black;
+    color:var(--a);
+    text-shadow: 2px 2px 2px var(--c);
+    font-size: 20px;
+    background: linear-gradient(var(--d), var(--a));
+}
+
+
+/*-----------------------------------------------------------------*/
+
+
+/*-----------STILER FÖR SIDOR DÄR MAN TAR BORT INLÄGG ----------*/
+
+
+.bortTagningsTabell {
+    display: flex;
+    width:75%;
+    margin: auto;
+    justify-content:center;
+    
+    
+    
+    
+
+}
+.deletekol1 {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    width:30%;
+    padding-left: 20px;
+    background: linear-gradient(to right, var(--a), var(--b), var(--b), var(--b), var(--a));
+    box-shadow: 2px 2px 2px black;
+    color: var(--d);
+    text-shadow: 2px 2px 2px black;
+    overflow: hidden;
+}
+.deletekol2 {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 3.5%;
+    text-align: center;
+    background: linear-gradient(to right, var(--a), var(--b), var(--b), var(--b), var(--a));
+    box-shadow: 2px 2px 2px black;
+    color: var(--d);
+    text-shadow: 2px 2px 2px black;
+    overflow: hidden;
+}
+.deletekol3 {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    width:20%;
+    padding-left: 20px;
+    background: linear-gradient(to right, var(--a), var(--b), var(--b), var(--b), var(--a));
+    box-shadow: 2px 2px 2px black;
+    color: var(--d);
+    text-shadow: 2px 2px 2px black;
+    overflow: hidden;
+}
+.deletekol4 {
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    width:8%;
+    text-align: center;
+    background: linear-gradient(to right, var(--a), var(--b), var(--b), var(--b), var(--a));
+    box-shadow: 2px 2px 2px black;
+    color: var(--d);
+    text-shadow: 2px 2px 2px black;
+    overflow: hidden;
+}
+.deletekol5 {
+
+    width:10%;
+    text-align: center;
+    padding: 2px 0px 2px 0px;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+
+.deletekol5 button{
+display: block;
+font-size: var(--bs-nav-link-font-size);
+font-weight: var(--bs-nav-link-font-weight);
+color:white;
+text-decoration: none;
+background-color: #222831;
+border:1px solid black;
+overflow:hidden;
+transition: color .25s ease-in-out, background-color .4s ease-in-out, border-color .15s ease-in-out, linear-gradient .15s ease-in-out;
+border-radius: 5px;
+box-shadow: 2px 2px 2px rgb(0, 0, 0);
+text-shadow: none;
+width:75%;
+}
+.deletekol5 button:hover {
+    background-color: var(--d);
+    
+    color: var(--bs-nav-link-color);
+}
+
+.hittatinlagg {
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    width: 55%;
+    gap: 5px;
+    padding-top: 5px;
+    text-align: center;
+    color: white; 
+}
+.sokresultat button {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+.hittatinlagg div {
+    padding: 2px 2px 2px 2px;
+    box-shadow: 2px 2px 2px black;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px black;
+    border-radius: 5px;
+    white-space: nowrap;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid black;
+    background-color: #27374D;
+    font-size: 12px;
+
+}
+.hittatinlagg div:hover {
+    background-color: var(--d);
+    color:var(--a);
+    text-shadow: 2px 2px 2px var(--d);    
+}
+.hittatkolumn1 {   
+    width: 40%;
+    text-align: left;
+}
+.hittatkolumn2 { 
+    width:12%;
+}
+.hittatkolumn3 {     
+    width:70%;
+    text-align: left;
+}
+.sokresultat {
+    width:100%;
+    margin: auto;
+}
+
